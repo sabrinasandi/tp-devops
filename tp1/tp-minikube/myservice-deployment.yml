@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservicetp1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservicetp1
+  template:
+    metadata:
+      labels:
+        app: myservicetp1
+    spec:
+      containers:
+        - image: ssabrina/myservicetp1
+          imagePullPolicy: IfNotPresent
+          name: myservicetp1
+      restartPolicy: Always
+
